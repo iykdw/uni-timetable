@@ -1,9 +1,8 @@
-import sys
 import os
+import sys
+
 from pdf2image import convert_from_path
-from pypdf import PdfReader
-from pypdf import PdfWriter
-from pypdf import Transformation
+from pypdf import PdfReader, PdfWriter, Transformation
 
 file = sys.argv[1]
 
@@ -45,6 +44,6 @@ for i, page in enumerate(reader.pages):
         writer.write(fp)
 
     page = convert_from_path(filename, 500)[0]
-    os.system(f"rm {filename}")
+    os.system("rm *.pdf *.aux *.fdb_latexmk *.fls *.log *.synctex.gz")
 
     page.save(f"{days[i]}.jpg", "JPEG")
