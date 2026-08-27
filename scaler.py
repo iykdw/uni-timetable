@@ -44,6 +44,7 @@ for i, page in enumerate(reader.pages):
         writer.write(fp)
 
     page = convert_from_path(filename, 500)[0]
-    os.system("rm *.pdf *.aux *.fdb_latexmk *.fls *.log *.synctex.gz")
 
     page.save(f"{days[i]}.jpg", "JPEG")
+
+os.system("rm *.pdf *.aux *.fdb_latexmk *.fls *.log *.synctex.gz")
