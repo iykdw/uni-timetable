@@ -1,10 +1,13 @@
 import pyperclip
 
 while True:
-    name = input("    Class: ")
-    time = input("    Time: ")
-    weeks = input("    Weeks: ")
-    room = input("    Room: ")
+    name = input("    Class: ").strip()
+    time = input("    Time: ").strip()
+    weeks = input("    Weeks: ").strip()
+    room = input("    Room: ").strip()
+
+    if name == "" and time == "" and weeks == "" and room == "":
+        break
 
     if len(name) > 20:
         midpoint = len(name) / 2
